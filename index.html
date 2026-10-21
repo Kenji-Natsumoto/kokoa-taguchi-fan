@@ -2,7 +2,7 @@
   ■ 編集ガイド
   ・ヒーロー動画：media/hero.webm / hero.mp4（ポスター media/hero-poster.jpg）。
   ・試合日：JSの FIGHT 定数（2026-11-21T00:00:00+09:00）。開始時刻未定のため日付0時までをカウント。
-  ・写真：photos/ に画像を置き、JSの PHOTOS 配列にファイル名を追加（例 'photo01.jpg'）。空なら仮タイル表示。
+  ・写真：photos/ に画像を置き、JSの PHOTOS 配列に ['ファイル名', 横構図=1/縦構図=0] を追加。
 -->
 <html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>田口心温 KOKOA TAGUCHI | WILD ONE 応援サイト</title>
@@ -92,12 +92,23 @@ footer .d{font-size:clamp(40px,9vw,100px);color:#1d1d1d;margin-bottom:24px}
 .count .t{font-size:clamp(40px,10vw,110px);display:flex;gap:.25em;align-items:baseline;flex-wrap:wrap}.count .t small{font-size:.35em;color:var(--g)}
 .count .n{font-size:12px;color:var(--g);margin-top:6px}
 #record,#support{padding-top:10vh;padding-bottom:10vh}
-.album{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px}
-.album button{aspect-ratio:1;border:0;background:repeating-linear-gradient(135deg,#0d0d0d 0 12px,#141414 12px 24px);color:var(--g);font:700 12px system-ui;cursor:pointer;overflow:hidden;padding:0}
-.album img{width:100%;height:100%;object-fit:cover;transition:transform .4s}.album button:hover img{transform:scale(1.06)}
-.lb{position:fixed;inset:0;z-index:150;background:#000e;display:none;place-items:center;padding:20px}.lb.open{display:grid}
-.lb img{max-width:100%;max-height:85vh}.lb .ph-big{width:min(80vw,500px);aspect-ratio:4/5;display:grid;place-items:center;border:2px dashed #444;color:var(--g)}
-.lb button{position:absolute;top:16px;right:16px;background:var(--r);color:#000;border:0;width:48px;height:48px;font-size:24px;font-weight:900;cursor:pointer}
+.albw{container-type:inline-size}
+.album{--c:5;--gp:6px;display:grid;grid-template-columns:repeat(var(--c),1fr);grid-auto-rows:calc((100cqw - (var(--c) - 1)*var(--gp))/var(--c)*.75);grid-auto-flow:dense;gap:var(--gp)}
+@media(max-width:760px){.album{--c:2;--gp:4px}}
+.album button{position:relative;grid-column:span 1;grid-row:span 2;border:0;background:#0d0d0d;cursor:pointer;overflow:hidden;padding:0}
+.album button.l{grid-column:span 2;grid-row:span 2}
+.album button::after{content:'';position:absolute;inset:0;border:2px solid var(--r);opacity:0;transition:opacity .3s}.album button:hover::after,.album button:focus-visible::after{opacity:1}
+.album img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(.25) contrast(1.05);transition:transform .5s,filter .5s}.album button:hover img{transform:scale(1.06);filter:none}
+.lb{position:fixed;inset:0;z-index:150;background:#000f;display:none;place-items:center;padding:56px 12px;touch-action:pan-y}.lb.open{display:grid}
+#lbc{display:grid;place-items:center}
+.lb img{max-width:min(92vw,1400px);max-height:82vh;object-fit:contain;animation:lbin .35s ease}
+@keyframes lbin{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:none}}
+.lb button{position:absolute;background:var(--r);color:#000;border:0;width:48px;height:48px;font-size:24px;font-weight:900;cursor:pointer}
+#lbx{top:16px;right:16px}
+.lb .nav{top:50%;transform:translateY(-50%);width:52px;height:72px;font-size:30px;background:#000a;color:#fff;border:1px solid #fff3}.lb .nav:hover{background:var(--r);color:#000}
+#lbp{left:12px}#lbn{right:12px}
+.lb .cnt{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);font:900 14px system-ui;letter-spacing:.3em;color:#fff}.lb .cnt b{color:var(--r)}
+@media(max-width:760px){.lb .nav{width:40px;height:56px;font-size:22px}#lbp{left:4px}#lbn{right:4px}}
 @keyframes spin{to{transform:rotate(1turn)}}
 @media(prefers-reduced-motion:reduce){.hero video{display:none}.hero .fb{background:url(media/hero-poster.jpg) center 30%/cover;filter:brightness(.5);animation:none;inset:0}}
 </style></head><body>
@@ -132,9 +143,9 @@ footer .d{font-size:clamp(40px,9vw,100px);color:#1d1d1d;margin-bottom:24px}
 <a class="btn main" id="post" href="#">Xで応援する →</a></section>
 <div class="cut" aria-hidden="true"></div>
 <section id="album" class="rv"><span class="no" aria-hidden="true">04</span><h2 class="d">PHOTO<b>ALBUM</b></h2>
-<div class="album" id="alb"></div><p class="ph" style="margin-top:14px">※使用許諾済みの写真のみ掲載予定。</p></section>
+<div class="albw"><div class="album" id="alb"></div></div></section>
 </main>
-<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="写真拡大"><button id="lbx" aria-label="閉じる">×</button><div id="lbc"></div></div>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="写真拡大"><button id="lbx" aria-label="閉じる">×</button><button class="nav" id="lbp" aria-label="前の写真">‹</button><div id="lbc"></div><button class="nav" id="lbn" aria-label="次の写真">›</button><div class="cnt" id="lbk" aria-live="polite"></div></div>
 <footer><div class="d" aria-hidden="true">WILD ONE</div>本サイトはファンによる非公式応援サイトです。所属ジム・選手本人とは関係ありません。<br>出典：日刊スポーツ／スポーツ報知／ボクシングモバイル／ボクシングログ<br>© KOKOA TAGUCHI FAN SITE</footer>
 <a class="cta" id="cta" href="#support">応援ポストする →</a>
 <script>
@@ -148,9 +159,13 @@ const t=Date.parse('2026-11-21T00:00:00+09:00'),d=Math.ceil((t-Date.now())/864e5
 const FIGHT=Date.parse('2026-11-21T00:00:00+09:00');const p2=n=>String(n).padStart(2,'0');
 const tick=()=>{let r=Math.max(0,FIGHT-Date.now())/1e3|0;document.getElementById('cD').textContent=p2(r/86400|0);document.getElementById('cT').textContent=p2(r%86400/3600|0)+':'+p2(r%3600/60|0)+':'+p2(r%60)};tick();setInterval(tick,1000);
 const hv=document.getElementById('hv');if(matchMedia('(prefers-reduced-motion:reduce)').matches){hv.pause();hv.removeAttribute('autoplay')}else{hv.play().catch(()=>{})}
-const PHOTOS=[/* 'photo01.jpg', */];
-const alb=document.getElementById('alb'),lb=document.getElementById('lb'),lbc=document.getElementById('lbc');
-const items=PHOTOS.length?PHOTOS:Array(8).fill(null);
-items.forEach((f,i)=>{const b=document.createElement('button');b.setAttribute('aria-label',f?'写真'+(i+1)+'を拡大':'写真枠'+(i+1)+'（準備中）');b.innerHTML=f?'<img loading="lazy" src="photos/'+f+'" alt="田口心温 写真'+(i+1)+'">':'PHOTO '+p2(i+1);b.onclick=()=>{lbc.innerHTML=f?'<img src="photos/'+f+'" alt="田口心温 写真'+(i+1)+'">':'<div class="ph-big">PHOTO '+p2(i+1)+'<br>（準備中）</div>';lb.classList.add('open');document.getElementById('lbx').focus()};alb.appendChild(b)});
-const cl=()=>lb.classList.remove('open');document.getElementById('lbx').onclick=cl;lb.onclick=e=>e.target===lb&&cl();addEventListener('keydown',e=>e.key==='Escape'&&cl());
+const PHOTOS=[['album01.jpg',0],['album02.jpg',1],['album03.jpg',0],['album04.jpg',1],['album05.jpg',0],['album06.jpg',1],['album07.jpg',0],['album08.jpg',1],['album09.jpg',0],['album10.jpg',1]];
+const alb=document.getElementById('alb'),lb=document.getElementById('lb'),lbc=document.getElementById('lbc'),lbk=document.getElementById('lbk');let cur=0,last=null;
+const show=i=>{cur=(i+PHOTOS.length)%PHOTOS.length;lbc.innerHTML='<img src="photos/'+PHOTOS[cur][0]+'" alt="田口心温 写真'+(cur+1)+'">';lbk.innerHTML='<b>'+p2(cur+1)+'</b> / '+p2(PHOTOS.length)};
+PHOTOS.forEach(([f,l],i)=>{const b=document.createElement('button');if(l)b.className='l';b.setAttribute('aria-label','写真'+(i+1)+'を拡大');b.innerHTML='<img loading="lazy" src="photos/'+f+'" alt="田口心温 写真'+(i+1)+'">';b.onclick=()=>{last=b;show(i);lb.classList.add('open');document.body.style.overflow='hidden';document.getElementById('lbx').focus()};alb.appendChild(b)});
+const cl=()=>{lb.classList.remove('open');document.body.style.overflow='';last&&last.focus()};document.getElementById('lbx').onclick=cl;
+document.getElementById('lbp').onclick=e=>{e.stopPropagation();show(cur-1)};document.getElementById('lbn').onclick=e=>{e.stopPropagation();show(cur+1)};
+lb.onclick=e=>(e.target===lb||e.target===lbc)&&cl();
+addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')cl();else if(e.key==='ArrowLeft')show(cur-1);else if(e.key==='ArrowRight')show(cur+1)});
+let tx=null;lb.addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});lb.addEventListener('touchend',e=>{if(tx===null)return;const d=e.changedTouches[0].clientX-tx;tx=null;if(Math.abs(d)>50)show(cur+(d<0?1:-1))});
 </script></body></html>
