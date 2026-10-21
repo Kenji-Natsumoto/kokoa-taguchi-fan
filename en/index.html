@@ -1,0 +1,174 @@
+<!DOCTYPE html><!--
+  ■ 編集ガイド
+  ・ヒーロー動画：media/hero.webm / hero.mp4（ポスター media/hero-poster.jpg）。
+  ・試合日：JSの FIGHT 定数（2026-11-21T00:00:00+09:00）。開始時刻未定のため日付0時までをカウント。
+  ・写真：photos/ に画像を置き、JSの PHOTOS 配列に ['ファイル名', 横構図=1/縦構図=0] を追加。
+-->
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>KOKOA TAGUCHI | OFFICIAL SITE</title>
+<meta name="description" content="Official site of Kokoa Taguchi, women's minimumweight pro boxer (KODLAB).">
+<meta property="og:title" content="KOKOA TAGUCHI | OFFICIAL SITE"><meta property="og:description" content="Official site of Kokoa Taguchi, women's minimumweight pro boxer (KODLAB)."><meta property="og:type" content="website"><meta property="og:url" content="https://kokoataguchi.com/en/"><meta property="og:locale" content="en_US">
+<link rel="alternate" hreflang="ja" href="https://kokoataguchi.com/"><link rel="alternate" hreflang="en" href="https://kokoataguchi.com/en/"><link rel="alternate" hreflang="x-default" href="https://kokoataguchi.com/">
+<meta name="theme-color" content="#070707">
+<style>
+:root{--r:#ff1f3d;--r2:#c4001f;--b:#070707;--b2:#111;--w:#f4f1ea;--g:#a3a09a;--line:#262626}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--b);color:var(--w);font-family:"Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",system-ui,sans-serif;line-height:1.85;overflow-x:hidden;padding-bottom:84px}
+body:after{content:"";position:fixed;inset:-50%;z-index:100;pointer-events:none;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:grain 1s steps(4) infinite}
+a{color:inherit}:focus-visible{outline:3px solid var(--r);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--r);color:#000;padding:8px 14px;z-index:200;font-weight:900}.skip:focus{left:8px}
+.d{font-family:Impact,"Arial Black","Helvetica Neue",sans-serif;font-weight:900;letter-spacing:-.02em;text-transform:uppercase;line-height:.85}
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:14px 5vw;background:linear-gradient(#070707ee,#07070700);font-weight:900;font-size:13px;letter-spacing:.22em}
+.logo{text-decoration:none;display:flex;gap:8px;align-items:center}.logo i{width:10px;height:10px;background:var(--r);display:inline-block;transform:rotate(45deg)}
+.menu{display:flex;gap:26px}.menu a{text-decoration:none;position:relative;padding:6px 0}.menu a:after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--r);transition:.25s}.menu a:hover:after,.menu a:focus-visible:after{width:100%}
+.burger{display:none;background:none;border:2px solid var(--w);color:var(--w);width:46px;height:46px;cursor:pointer;position:relative}
+.burger span,.burger span:before,.burger span:after{position:absolute;left:10px;width:22px;height:2px;background:currentColor;content:"";transition:.25s}.burger span{top:20px}.burger span:before{left:0;top:-7px}.burger span:after{left:0;top:7px}
+.burger[aria-expanded=true] span{background:transparent}.burger[aria-expanded=true] span:before{top:0;transform:rotate(45deg)}.burger[aria-expanded=true] span:after{top:0;transform:rotate(-45deg)}
+/* hero */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:110px 5vw 9vh;position:relative;overflow:hidden;isolation:isolate}
+.hero:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 78% 28%,rgba(255,31,61,.5),transparent 55%),radial-gradient(circle at 10% 90%,rgba(255,31,61,.15),transparent 40%),repeating-linear-gradient(115deg,transparent 0 38px,rgba(255,255,255,.03) 38px 39px)}
+.hero:after{content:"WILD ONE";position:absolute;z-index:-1;right:-4vw;top:16vh;font:900 clamp(90px,24vw,360px)/.8 Impact,"Arial Black",sans-serif;color:transparent;-webkit-text-stroke:1px rgba(255,31,61,.35);writing-mode:vertical-rl;animation:drift 14s ease-in-out infinite alternate}
+.kicker{display:inline-flex;gap:10px;align-items:center;font-weight:900;letter-spacing:.35em;font-size:12px;color:var(--r);margin-bottom:18px;animation:up .8s both}.kicker:before{content:"";width:34px;height:3px;background:var(--r)}
+.big{font-size:clamp(64px,min(17vw,22vh),220px);animation:up 1s .1s cubic-bezier(.2,.8,.2,1) both}
+.big span{color:transparent;-webkit-text-stroke:2px var(--w);display:block;animation:slide 1.1s cubic-bezier(.2,.8,.2,1) both}
+.big em{color:var(--r);font-style:normal;display:inline-block;animation:pop .6s 1s both}
+.tag{margin-top:26px;font-size:clamp(20px,3vw,30px);font-weight:900;line-height:1.4;animation:up 1s .4s both;max-width:20em}
+.tag small{display:block;color:var(--g);font-size:13px;letter-spacing:.28em;font-weight:700;margin-bottom:8px}
+.scroll{position:absolute;right:5vw;bottom:9vh;font-size:11px;letter-spacing:.3em;writing-mode:vertical-rl;color:var(--g)}.scroll:after{content:"";display:block;width:2px;height:60px;margin:10px auto 0;background:linear-gradient(var(--r),transparent);animation:line 1.8s infinite}
+/* marquee */
+.mq{background:var(--r);color:#000;white-space:nowrap;overflow:hidden;padding:14px 0;font-size:clamp(24px,4vw,40px);transform:rotate(-2.5deg) scale(1.05);margin:-24px 0 0;position:relative;z-index:2;box-shadow:0 0 60px rgba(255,31,61,.35)}
+.mq div{display:inline-block;animation:mq 20s linear infinite}
+/* sections */
+section{padding:16vh 5vw;max-width:1200px;margin:auto;position:relative}
+.no{position:absolute;top:10vh;right:5vw;font:900 clamp(60px,12vw,160px)/1 Impact,"Arial Black",sans-serif;color:transparent;-webkit-text-stroke:1px #2c2c2c}
+h2{font-size:clamp(56px,12vw,140px);margin-bottom:44px;position:relative}h2 b{color:var(--r)}
+h2:after{content:"";display:block;width:80px;height:6px;background:var(--r);margin-top:18px;transform:skewX(-20deg)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:2px;background:var(--line);border:2px solid var(--line)}
+.grid div{background:var(--b);padding:22px;transition:background .25s}.grid div:hover{background:#140507}.grid dt{font-size:11px;color:var(--r);letter-spacing:.25em;font-weight:900}.grid dd{font-weight:900;font-size:18px;line-height:1.5}
+.bio{display:grid;gap:40px;margin:56px 0 20px;align-items:center}
+.photo{aspect-ratio:4/5;width:100%;max-width:420px;border:2px solid #2a2a2a;display:grid;place-items:center;color:var(--g);font-size:13px;text-align:center;position:relative;background:repeating-linear-gradient(135deg,#0d0d0d 0 12px,#111 12px 24px);clip-path:polygon(0 0,100% 0,100% 92%,88% 100%,0 100%)}
+.photo:before,.photo:after{content:"";position:absolute;width:28px;height:28px;border:3px solid var(--r)}.photo:before{top:12px;left:12px;border-right:0;border-bottom:0}.photo:after{bottom:12px;right:60px;border-left:0;border-top:0;display:none}
+.lead{font-size:16px}
+blockquote{font-size:clamp(26px,5vw,56px);font-weight:900;line-height:1.35;border-left:8px solid var(--r);padding:6px 0 6px 24px;margin:40px 0;background:linear-gradient(90deg,rgba(255,31,61,.08),transparent 60%)}
+blockquote cite{display:block;font-size:13px;color:var(--g);font-weight:400;font-style:normal;margin-top:12px;line-height:1.6}
+/* scoreboard */
+.board{border:2px solid var(--w);background:#0b0b0b;margin-bottom:48px;position:relative}
+.board-h{display:flex;justify-content:space-between;padding:10px 18px;border-bottom:2px solid var(--w);font-size:11px;letter-spacing:.3em;font-weight:900}.board-h b{color:var(--r)}
+.rec{display:grid;grid-template-columns:repeat(3,1fr)}.rec div{font-size:clamp(84px,18vw,200px);text-align:center;padding:22px 6px 18px;border-right:2px solid var(--line);text-shadow:0 0 30px rgba(255,255,255,.12)}.rec div:last-child{border-right:0}
+.rec small{display:block;font-size:13px;color:var(--g);font-family:system-ui,sans-serif;letter-spacing:.35em;margin-top:12px;font-weight:700}
+.rec .k{color:var(--r);text-shadow:0 0 40px rgba(255,31,61,.6);background:radial-gradient(circle,rgba(255,31,61,.12),transparent 70%)}
+.fight{border-top:2px solid var(--w);padding:26px 0;display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center}
+.fight .res{background:var(--r);color:#000;padding:8px 16px;font-weight:900;letter-spacing:.1em;clip-path:polygon(8% 0,100% 0,92% 100%,0 100%)}
+.fight .res.nx{background:#333;color:#fff}
+.fight>b{font-size:clamp(18px,2.4vw,26px)}
+.cd span{color:var(--r);font:900 1.6em Impact,"Arial Black",sans-serif}
+.ph{color:var(--g);font-size:13px}
+/* support */
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:52px;border:2px solid var(--w);color:var(--w);padding:14px 24px;text-decoration:none;font-weight:900;letter-spacing:.1em;transition:.2s;position:relative;overflow:hidden;background:none;cursor:pointer;font-size:15px}
+.btn:hover,.btn:focus-visible{background:var(--r);border-color:var(--r);color:#000;transform:translateY(-2px)}
+.btn.main{background:var(--r);border-color:var(--r);color:#000}.btn.main:hover{background:var(--w);border-color:var(--w)}
+label.l{display:block;margin-top:40px;font-size:12px;letter-spacing:.25em;color:var(--g);font-weight:700}
+textarea{width:100%;background:var(--b2);border:2px solid #333;color:var(--w);padding:16px;font:inherit;min-height:130px;margin:10px 0 14px;resize:vertical}textarea:focus{border-color:var(--r);outline:none}
+footer{padding:60px 5vw 40px;border-top:1px solid var(--line);color:var(--g);font-size:12px;max-width:1200px;margin:auto}
+footer .d{font-size:clamp(40px,9vw,100px);color:#1d1d1d;margin-bottom:24px}
+/* sticky cta */
+.cta{position:fixed;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));z-index:60;display:none;justify-content:center;background:var(--r);color:#000;font-weight:900;letter-spacing:.12em;text-decoration:none;padding:16px;font-size:15px;box-shadow:0 10px 40px rgba(0,0,0,.6);transition:transform .3s}
+.cta.hide{transform:translateY(150%)}
+/* reveal */
+.rv{opacity:0;transform:translateY(50px);transition:opacity .9s,transform .9s cubic-bezier(.2,.8,.2,1)}.rv.on{opacity:1;transform:none}
+.cut{height:80px;background:linear-gradient(to bottom right,var(--b) 49.5%,#1a0005 50%);opacity:.9}
+@keyframes up{from{opacity:0;transform:translateY(60px)}}@keyframes slide{from{opacity:0;transform:translateX(-12vw)}}@keyframes pop{from{transform:scale(0)}}
+@keyframes mq{to{transform:translateX(-50%)}}@keyframes line{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+@keyframes drift{to{transform:translateY(-6vh)}}@keyframes grain{0%{transform:translate(0)}25%{transform:translate(-3%,2%)}50%{transform:translate(2%,-3%)}75%{transform:translate(-2%,-1%)}}
+@media(min-width:861px){.bio{grid-template-columns:420px 1fr}body{padding-bottom:0}}
+@media(max-width:860px){.burger{display:block}.menu{position:fixed;inset:0;background:#070707f5;flex-direction:column;justify-content:center;align-items:flex-start;padding:0 10vw;gap:8px;transform:translateX(100%);transition:transform .35s cubic-bezier(.2,.8,.2,1);visibility:hidden}
+.menu.open{transform:none;visibility:visible}.menu a{font:900 clamp(48px,14vw,80px)/1.1 Impact,"Arial Black",sans-serif}.burger{z-index:2}.cta{display:flex}.scroll{display:none}}
+@media(max-width:600px){.fight{grid-template-columns:1fr;gap:10px}.fight .res{justify-self:start}.big span{-webkit-text-stroke:1.5px var(--w)}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;z-index:-2;opacity:.6}.hero .hov{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.55) 55%,rgba(7,7,7,.95))}
+.hero .fb{position:absolute;inset:-20%;z-index:-3;background:conic-gradient(from 0deg at 60% 40%,#2a0008,#070707 30%,#3a000c 55%,#070707 80%,#2a0008);animation:spin 24s linear infinite;filter:blur(40px)}
+.count{margin-top:28px;animation:up 1s .6s both}.count p{font-size:12px;letter-spacing:.3em;color:var(--r);font-weight:900}
+.count .t{font-size:clamp(40px,10vw,110px);display:flex;gap:.25em;align-items:baseline;flex-wrap:wrap}.count .t small{font-size:.35em;color:var(--g)}
+.count .n{font-size:12px;color:var(--g);margin-top:6px}
+#record,#support{padding-top:10vh;padding-bottom:10vh}
+.albw{container-type:inline-size}
+.album{--c:5;--gp:6px;display:grid;grid-template-columns:repeat(var(--c),1fr);grid-auto-rows:calc((100cqw - (var(--c) - 1)*var(--gp))/var(--c)*.75);grid-auto-flow:dense;gap:var(--gp)}
+@media(max-width:760px){.album{--c:2;--gp:4px}}
+.album button{position:relative;grid-column:span 1;grid-row:span 2;border:0;background:#0d0d0d;cursor:pointer;overflow:hidden;padding:0}
+.album button.l{grid-column:span 2;grid-row:span 2}
+.album button::after{content:'';position:absolute;inset:0;border:2px solid var(--r);opacity:0;transition:opacity .3s}.album button:hover::after,.album button:focus-visible::after{opacity:1}
+.album img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(.25) contrast(1.05);transition:transform .5s,filter .5s}.album button:hover img{transform:scale(1.06);filter:none}
+.lb{position:fixed;inset:0;z-index:150;background:#000f;display:none;place-items:center;padding:56px 12px;touch-action:pan-y}.lb.open{display:grid}
+#lbc{display:grid;place-items:center}
+.lb img{max-width:min(92vw,1400px);max-height:82vh;object-fit:contain;animation:lbin .35s ease}
+@keyframes lbin{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:none}}
+.lb button{position:absolute;background:var(--r);color:#000;border:0;width:48px;height:48px;font-size:24px;font-weight:900;cursor:pointer}
+#lbx{top:16px;right:16px}
+.lb .nav{top:50%;transform:translateY(-50%);width:52px;height:72px;font-size:30px;background:#000a;color:#fff;border:1px solid #fff3}.lb .nav:hover{background:var(--r);color:#000}
+#lbp{left:12px}#lbn{right:12px}
+.lb .cnt{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);font:900 14px system-ui;letter-spacing:.3em;color:#fff}.lb .cnt b{color:var(--r)}
+@media(max-width:760px){.lb .nav{width:40px;height:56px;font-size:22px}#lbp{left:4px}#lbn{right:4px}}
+@keyframes spin{to{transform:rotate(1turn)}}
+@media(prefers-reduced-motion:reduce){.hero video{display:none}.hero .fb{background:url(../media/hero-poster.jpg) center 30%/cover;filter:brightness(.5);animation:none;inset:0}}
+.lang{margin-left:auto;margin-right:22px;display:flex;gap:6px;font-size:12px;letter-spacing:.15em}.lang a,.lang span{text-decoration:none;padding:4px 8px;border:1px solid #fff4}.lang span{background:var(--r);border-color:var(--r);color:#000}.lang a:hover{border-color:var(--r);color:var(--r)}@media(max-width:860px){.lang{margin-right:12px}}
+</style></head><body>
+<a class="skip" href="#main">Skip to content</a>
+<nav aria-label="Main"><a class="logo" href="#top"><i aria-hidden="true"></i>KOKOA TAGUCHI OFFICIAL</a><div class="lang" aria-label="Language"><a href="../" lang="ja" hreflang="ja">JP</a><span lang="en" aria-current="true">EN</span></div>
+<button class="burger" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span></button>
+<div class="menu" id="menu"><a href="#profile">PROFILE</a><a href="#record">RECORD</a><a href="#support">SUPPORT</a><a href="#album">ALBUM</a></div></nav>
+<header class="hero" id="top"><div class="fb" aria-hidden="true"></div>
+<video id="hv" autoplay muted loop playsinline preload="auto" aria-hidden="true" poster="../media/hero-poster.jpg"><source src="../media/hero.webm" type="video/webm"><source src="../media/hero.mp4" type="video/mp4"></video><div class="hov" aria-hidden="true"></div><p class="kicker">WILD ONE</p><h1 class="big d"><span>KOKOA</span>TAGUCHI<em>.</em></h1>
+<p class="tag"><small>KOKOA TAGUCHI / WOMEN'S MINIMUMWEIGHT / KODLAB</small>Showing the world that “girls are scary.”</p><div class="count" role="timer" aria-label="Countdown to the next fight"><p>COUNTDOWN TO 11.21 KORAKUEN HALL</p><div class="t d"><span id="cD">--</span><small>DAYS</small><span id="cT">--:--:--</span></div><p class="n">*Start time TBA (counting down to 0:00 JST on fight day)</p></div><span class="scroll" aria-hidden="true">SCROLL</span></header>
+<div class="mq d" aria-hidden="true"><div>WILD ONE ★ FEMALE KOD ★ KOKOA TAGUCHI ★ MINIMUMWEIGHT ★ WILD ONE ★ FEMALE KOD ★ KOKOA TAGUCHI ★ MINIMUMWEIGHT ★&nbsp;</div></div>
+<main id="main">
+<section id="profile" class="rv"><span class="no" aria-hidden="true">01</span><h2 class="d">PRO<b>FILE</b></h2>
+<dl class="grid"><div><dt>NAME</dt><dd>Kokoa Taguchi</dd></div><div><dt>CLASS</dt><dd>Women's Minimumweight</dd></div><div><dt>GYM</dt><dd>KODLAB</dd></div><div><dt>FROM</dt><dd>Edogawa, Tokyo</dd></div><div><dt>HEIGHT</dt><dd>151cm</dd></div><div><dt>STYLE</dt><dd>Orthodox</dd></div><div><dt>WEAPON</dt><dd>Right overhand / Left liver shot</dd></div><div><dt>GOAL</dt><dd>World Champion</dd></div></dl>
+<div class="bio"><div class="photo"><img src="../photos/official.jpg" alt="Kokoa Taguchi official photo" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%"></div>
+<p class="lead">She started Kyokushin karate at age 3 and switched to boxing in 6th grade. After graduating from Nippon Sport Science University, she joined KODLAB in February 2026 and, as the gym's first female boxer, passed the Class-B pro test in April. Amateur record: 32 bouts, 24 wins (10 RSC), 8 losses. Runner-up at the 2022 All-Japan Women's Championships (minimumweight) and champion of the Kanto Collegiate Tournament. Her idols are Takashi Uchiyama and Marvin Hagler.</p></div>
+<h3 class="kicker" style="margin-top:56px">IN HER WORDS</h3><blockquote>“I’m going in as the Wild One.”<cite>— At the weigh-in the day before her pro debut, July 2026 (Sports Hochi)</cite></blockquote>
+<blockquote>“She’s the female KOD.”<cite>— KODLAB president Takashi Uchiyama (Sports Hochi)</cite></blockquote></section>
+<div class="cut" aria-hidden="true"></div>
+<section id="record" class="rv"><span class="no" aria-hidden="true">02</span><h2 class="d">RE<b>CORD</b></h2>
+<div class="board" role="group" aria-label="Pro record"><div class="board-h"><span>PRO RECORD</span><b>WIN — LOSS — KO</b></div>
+<div class="rec d"><div>1<small>WIN</small></div><div>0<small>LOSS</small></div><div class="k">1<small>KO</small></div></div></div>
+<div class="fight"><span class="res">WIN</span><div><b>vs Lenz Dackel (Philippines)</b><br><span class="ph">2026.07.15 Korakuen Hall / Treasure Boxing 13 / Women's minimumweight, 6 rounds</span></div><b>6R 0:32 TKO</b></div>
+<div class="fight"><span class="res nx">NEXT</span><div><b>Next: Sat, November 21, 2026 — Korakuen Hall</b><br><span class="ph">Opponent: TBA / Tickets: TBA</span></div><b class="cd" aria-live="polite"><span id="cd">—</span> days to go</b></div>
+<p class="ph">*Pro record based on public information as of October 2026.</p></section>
+<div class="cut" aria-hidden="true"></div>
+<section id="support" class="rv"><span class="no" aria-hidden="true">03</span><h2 class="d">SUP<b>PORT</b></h2>
+<p>Cheer on the “Wild One” with everything you’ve got — from ringside and on social media.</p>
+<div class="btns"><a class="btn" href="https://www.instagram.com/kokoa_taguchi/" target="_blank" rel="noopener">INSTAGRAM ↗</a><a class="btn" href="https://kodlab.jp/" target="_blank" rel="noopener">KODLAB OFFICIAL ↗</a><a class="btn" href="https://www.instagram.com/kodlab111/" target="_blank" rel="noopener">KODLAB INSTAGRAM ↗</a><a class="btn" href="https://boxmob.jp/sp/boxer/boxer.html?boxer_id=13830" target="_blank" rel="noopener">BOXER PROFILE (BOXMOB) ↗</a></div>
+<label class="l" for="m">MESSAGE OF SUPPORT</label>
+<textarea id="m" placeholder="Write a message of support and post it on X with #田口心温!"></textarea>
+<a class="btn main" id="post" href="#">CHEER ON X →</a></section>
+<div class="cut" aria-hidden="true"></div>
+<section id="album" class="rv"><span class="no" aria-hidden="true">04</span><h2 class="d">PHOTO<b>ALBUM</b></h2>
+<div class="albw"><div class="album" id="alb"></div></div></section>
+</main>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Enlarged photo"><button id="lbx" aria-label="Close">×</button><button class="nav" id="lbp" aria-label="Previous photo">‹</button><div id="lbc"></div><button class="nav" id="lbn" aria-label="Next photo">›</button><div class="cnt" id="lbk" aria-live="polite"></div></div>
+<footer><div class="d" aria-hidden="true">WILD ONE</div>Kokoa Taguchi Official Site (operated with her permission)<br>Sources: Nikkan Sports / Sports Hochi / Boxing Mobile / Boxing Log<br>© KOKOA TAGUCHI OFFICIAL SITE</footer>
+<a class="cta" id="cta" href="#support">POST YOUR SUPPORT →</a>
+<script>
+const io=new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&x.target.classList.add('on')),{threshold:.1});document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+document.getElementById('post').onclick=e=>{e.preventDefault();open('https://x.com/intent/post?text='+encodeURIComponent((document.getElementById('m').value||'Go Kokoa Taguchi!')+' #田口心温 #WILDONE'))};
+const b=document.querySelector('.burger'),mn=document.getElementById('menu');
+const set=o=>{b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Close menu':'Open menu');mn.classList.toggle('open',o);document.body.style.overflow=o?'hidden':''};
+b.onclick=()=>set(b.getAttribute('aria-expanded')!=='true');mn.querySelectorAll('a').forEach(a=>a.onclick=()=>set(false));addEventListener('keydown',e=>e.key==='Escape'&&set(false));
+const cta=document.getElementById('cta');new IntersectionObserver(e=>cta.classList.toggle('hide',e[0].isIntersecting)).observe(document.getElementById('support'));
+const t=Date.parse('2026-11-21T00:00:00+09:00'),d=Math.ceil((t-Date.now())/864e5);document.getElementById('cd').textContent=d>0?d:0;
+const FIGHT=Date.parse('2026-11-21T00:00:00+09:00');const p2=n=>String(n).padStart(2,'0');
+const tick=()=>{let r=Math.max(0,FIGHT-Date.now())/1e3|0;document.getElementById('cD').textContent=p2(r/86400|0);document.getElementById('cT').textContent=p2(r%86400/3600|0)+':'+p2(r%3600/60|0)+':'+p2(r%60)};tick();setInterval(tick,1000);
+const hv=document.getElementById('hv');if(matchMedia('(prefers-reduced-motion:reduce)').matches){hv.pause();hv.removeAttribute('autoplay')}else{hv.play().catch(()=>{})}
+const PHOTOS=[['album01.jpg',0],['album02.jpg',1],['album03.jpg',0],['album04.jpg',1],['album05.jpg',0],['album06.jpg',1],['album07.jpg',0],['album08.jpg',1],['album09.jpg',0],['album10.jpg',1]];
+const alb=document.getElementById('alb'),lb=document.getElementById('lb'),lbc=document.getElementById('lbc'),lbk=document.getElementById('lbk');let cur=0,last=null;
+const show=i=>{cur=(i+PHOTOS.length)%PHOTOS.length;lbc.innerHTML='<img src="../photos/'+PHOTOS[cur][0]+'" alt="Kokoa Taguchi photo '+(cur+1)+'">';lbk.innerHTML='<b>'+p2(cur+1)+'</b> / '+p2(PHOTOS.length)};
+PHOTOS.forEach(([f,l],i)=>{const b=document.createElement('button');if(l)b.className='l';b.setAttribute('aria-label','Enlarge photo '+(i+1));b.innerHTML='<img loading="lazy" src="../photos/'+f+'" alt="Kokoa Taguchi photo '+(i+1)+'">';b.onclick=()=>{last=b;show(i);lb.classList.add('open');document.body.style.overflow='hidden';document.getElementById('lbx').focus()};alb.appendChild(b)});
+const cl=()=>{lb.classList.remove('open');document.body.style.overflow='';last&&last.focus()};document.getElementById('lbx').onclick=cl;
+document.getElementById('lbp').onclick=e=>{e.stopPropagation();show(cur-1)};document.getElementById('lbn').onclick=e=>{e.stopPropagation();show(cur+1)};
+lb.onclick=e=>(e.target===lb||e.target===lbc)&&cl();
+addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')cl();else if(e.key==='ArrowLeft')show(cur-1);else if(e.key==='ArrowRight')show(cur+1)});
+let tx=null;lb.addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});lb.addEventListener('touchend',e=>{if(tx===null)return;const d=e.changedTouches[0].clientX-tx;tx=null;if(Math.abs(d)>50)show(cur+(d<0?1:-1))});
+</script></body></html>
