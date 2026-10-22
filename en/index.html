@@ -114,6 +114,28 @@ footer .d{font-size:clamp(40px,9vw,100px);color:#1d1d1d;margin-bottom:24px}
 @keyframes spin{to{transform:rotate(1turn)}}
 @media(prefers-reduced-motion:reduce){.hero video{display:none}.hero .fb{background:url(../media/hero-poster.jpg) center 30%/cover;filter:brightness(.5);animation:none;inset:0}}
 .lang{margin-left:auto;margin-right:22px;display:flex;gap:6px;font-size:12px;letter-spacing:.15em}.lang a,.lang span{text-decoration:none;padding:4px 8px;border:1px solid #fff4}.lang span{background:var(--r);border-color:var(--r);color:#000}.lang a:hover{border-color:var(--r);color:var(--r)}@media(max-width:860px){.lang{margin-right:12px}}
+/* profile v2 */
+.lead2{font-size:clamp(18px,2.2vw,22px);font-weight:900;line-height:1.6}.lead2 b{color:var(--r)}
+.lead2 small{display:block;color:var(--g);font-size:13px;font-weight:700;margin-top:10px;letter-spacing:.05em}
+.tl{list-style:none;margin:64px 0 0;position:relative;padding-left:34px}
+.tl:before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--r),#333 85%)}
+.tl li{position:relative;padding:0 0 30px}.tl li:last-child{padding-bottom:0}
+.tl li:before{content:"";position:absolute;left:-31px;top:7px;width:14px;height:14px;background:var(--b);border:3px solid var(--r);transform:rotate(45deg)}
+.tl li.pro:before{background:var(--r)}
+.tl .y{display:block;font:900 13px/1.2 Impact,"Arial Black",sans-serif;letter-spacing:.22em;color:var(--r)}
+.tl strong{display:block;font-size:clamp(17px,2vw,20px);line-height:1.45;margin-top:4px}
+.tl p{color:var(--g);font-size:14px;line-height:1.7}
+.ach{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2px;background:var(--line);border:2px solid var(--line);margin-top:64px}
+.ach>div{background:var(--b);padding:28px 24px}
+.ach h3{font-size:12px;letter-spacing:.3em;color:var(--r);font-weight:900;margin-bottom:18px;display:flex;gap:10px;align-items:center}.ach h3:before{content:"";width:22px;height:3px;background:var(--r)}
+.ach .bn{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+.ach .bn span{font-size:clamp(64px,9vw,96px);color:var(--w)}.ach .bn em{font-style:normal;font-weight:900;font-size:15px;color:var(--g)}
+.ach .bn .k{color:var(--r);text-shadow:0 0 30px rgba(255,31,61,.5)}
+.ach .sub{font-size:13px;color:var(--g);font-weight:700;letter-spacing:.1em;margin-bottom:18px}
+.ach ul{list-style:none;border-top:1px solid var(--line)}.ach li{padding:11px 0;border-bottom:1px solid var(--line);font-weight:900;display:flex;gap:12px;align-items:baseline}
+.ach li i{font-style:normal;color:var(--r);font:900 12px Impact,"Arial Black",sans-serif;letter-spacing:.12em;min-width:4.2em}
+.ach li small{color:var(--g);font-weight:700;font-size:12px;margin-left:auto;white-space:nowrap}
+@media(max-width:520px){.ach{grid-template-columns:1fr}.ach li{flex-wrap:wrap}.ach li small{margin-left:0;width:100%}}
 </style></head><body>
 <a class="skip" href="#main">Skip to content</a>
 <nav aria-label="Main"><a class="logo" href="#top"><i aria-hidden="true"></i>KOKOA TAGUCHI OFFICIAL</a><div class="lang" aria-label="Language"><a href="../" lang="ja" hreflang="ja">JP</a><span lang="en" aria-current="true">EN</span></div>
@@ -127,7 +149,9 @@ footer .d{font-size:clamp(40px,9vw,100px);color:#1d1d1d;margin-bottom:24px}
 <section id="profile" class="rv"><span class="no" aria-hidden="true">01</span><h2 class="d">PRO<b>FILE</b></h2>
 <dl class="grid"><div><dt>NAME</dt><dd>Kokoa Taguchi</dd></div><div><dt>CLASS</dt><dd>Women's Minimumweight</dd></div><div><dt>GYM</dt><dd>KODLAB</dd></div><div><dt>FROM</dt><dd>Edogawa, Tokyo</dd></div><div><dt>HEIGHT</dt><dd>151cm</dd></div><div><dt>STYLE</dt><dd>Orthodox</dd></div><div><dt>WEAPON</dt><dd>Right overhand / Left liver shot</dd></div><div><dt>GOAL</dt><dd>World Champion</dd></div></dl>
 <div class="bio"><div class="photo"><img src="../photos/official.jpg" alt="Kokoa Taguchi official photo" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%"></div>
-<p class="lead">She started Kyokushin karate at age 3 and switched to boxing in 6th grade. After graduating from Nippon Sport Science University, she joined KODLAB in February 2026 and, as the gym's first female boxer, passed the Class-B pro test in April. Amateur record: 32 bouts, 24 wins (10 RSC), 8 losses. Runner-up at the 2022 All-Japan Women's Championships (minimumweight) and champion of the Kanto Collegiate Tournament. Her idols are Takashi Uchiyama and Marvin Hagler.</p></div>
+<div class="lead2"><p><b>Kyokushin karate</b> from age 3, <b>boxing</b> before junior high.<br>KODLAB’s first female boxer, aiming for the top of the world.</p><small>Her idols are Takashi Uchiyama and Marvin Hagler.</small></div></div>
+<ol class="tl" aria-label="Career timeline"><li><span class="y">AGE 3</span><strong>Starts Kyokushin karate</strong><p>Goes on to win every title, including five straight international championships.</p></li><li><span class="y">BOXING</span><strong>Switches to boxing before junior high</strong></li><li><span class="y">+2 YEARS</span><strong>U-15 All-Japan champion</strong><p>Just two years after switching. Enters high school on a boxing scholarship.</p></li><li><span class="y">NSSU</span><strong>Nippon Sport Science University on recommendation</strong><p>Boxing and nothing else — training every single day.</p></li><li><span class="y">1ST YEAR</span><strong>All-Japan Championships runner-up</strong></li><li><span class="y">3RD YEAR</span><strong>Kanto Collegiate Tournament champion / All-Japan 3rd place</strong></li><li><span class="y">4TH YEAR</span><strong>Leads her team to the collegiate tournament final</strong><p>Retires early from amateur boxing to turn pro.</p></li><li class="pro"><span class="y">KODLAB</span><strong>Joins President Uchiyama’s KOD LAB</strong><p>Introduced by her university boxing coach, she signs with the gym while still a student.</p></li><li class="pro"><span class="y">APRIL</span><strong>Passes the pro test — Class-B license</strong><p>Her sparring partner for the test: former two-division world champion Tsunami Amami.</p></li></ol>
+<div class="ach" role="group" aria-label="Achievements"><div><h3>KYOKUSHIN KARATE</h3><p class="bn"><span class="d k">5</span><em>straight titles</em></p><p class="sub">INTERNATIONAL TOURNAMENT</p><ul><li><i>CHAMP</i>Russia Cup champion</li><li><i>DEMO</i>Japan–Korea 50th Anniversary of Diplomatic Relations demonstration<small>Youth representative</small></li><li><i>DEMO</i>Tokugawa Ieyasu 400th Memorial Grand Festival demonstration<small>Youth representative</small></li></ul></div><div><h3>AMATEUR BOXING</h3><p class="bn"><span class="d">32</span><em>bouts</em><span class="d k">24</span><em>W (10 RSC)</em><span class="d">8</span><em>L</em></p><p class="sub">AMATEUR RECORD</p><ul><li><i>CHAMP</i>U-15 All-Japan champion</li><li><i>2022</i>All-Japan Championships runner-up</li><li><i>2024</i>All-Japan Championships 3rd place</li><li><i>CHAMP</i>Kanto Collegiate Tournament champion</li></ul></div></div>
 <h3 class="kicker" style="margin-top:56px">IN HER WORDS</h3><blockquote>“I’m going in as the Wild One.”<cite>— At the weigh-in the day before her pro debut, July 2026 (Sports Hochi)</cite></blockquote>
 <blockquote>“She’s the female KOD.”<cite>— KODLAB president Takashi Uchiyama (Sports Hochi)</cite></blockquote></section>
 <div class="cut" aria-hidden="true"></div>

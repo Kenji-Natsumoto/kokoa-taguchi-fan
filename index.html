@@ -114,6 +114,28 @@ footer .d{font-size:clamp(40px,9vw,100px);color:#1d1d1d;margin-bottom:24px}
 @keyframes spin{to{transform:rotate(1turn)}}
 @media(prefers-reduced-motion:reduce){.hero video{display:none}.hero .fb{background:url(media/hero-poster.jpg) center 30%/cover;filter:brightness(.5);animation:none;inset:0}}
 .lang{margin-left:auto;margin-right:22px;display:flex;gap:6px;font-size:12px;letter-spacing:.15em}.lang a,.lang span{text-decoration:none;padding:4px 8px;border:1px solid #fff4}.lang span{background:var(--r);border-color:var(--r);color:#000}.lang a:hover{border-color:var(--r);color:var(--r)}@media(max-width:860px){.lang{margin-right:12px}}
+/* profile v2 */
+.lead2{font-size:clamp(18px,2.2vw,22px);font-weight:900;line-height:1.6}.lead2 b{color:var(--r)}
+.lead2 small{display:block;color:var(--g);font-size:13px;font-weight:700;margin-top:10px;letter-spacing:.05em}
+.tl{list-style:none;margin:64px 0 0;position:relative;padding-left:34px}
+.tl:before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--r),#333 85%)}
+.tl li{position:relative;padding:0 0 30px}.tl li:last-child{padding-bottom:0}
+.tl li:before{content:"";position:absolute;left:-31px;top:7px;width:14px;height:14px;background:var(--b);border:3px solid var(--r);transform:rotate(45deg)}
+.tl li.pro:before{background:var(--r)}
+.tl .y{display:block;font:900 13px/1.2 Impact,"Arial Black",sans-serif;letter-spacing:.22em;color:var(--r)}
+.tl strong{display:block;font-size:clamp(17px,2vw,20px);line-height:1.45;margin-top:4px}
+.tl p{color:var(--g);font-size:14px;line-height:1.7}
+.ach{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2px;background:var(--line);border:2px solid var(--line);margin-top:64px}
+.ach>div{background:var(--b);padding:28px 24px}
+.ach h3{font-size:12px;letter-spacing:.3em;color:var(--r);font-weight:900;margin-bottom:18px;display:flex;gap:10px;align-items:center}.ach h3:before{content:"";width:22px;height:3px;background:var(--r)}
+.ach .bn{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+.ach .bn span{font-size:clamp(64px,9vw,96px);color:var(--w)}.ach .bn em{font-style:normal;font-weight:900;font-size:15px;color:var(--g)}
+.ach .bn .k{color:var(--r);text-shadow:0 0 30px rgba(255,31,61,.5)}
+.ach .sub{font-size:13px;color:var(--g);font-weight:700;letter-spacing:.1em;margin-bottom:18px}
+.ach ul{list-style:none;border-top:1px solid var(--line)}.ach li{padding:11px 0;border-bottom:1px solid var(--line);font-weight:900;display:flex;gap:12px;align-items:baseline}
+.ach li i{font-style:normal;color:var(--r);font:900 12px Impact,"Arial Black",sans-serif;letter-spacing:.12em;min-width:4.2em}
+.ach li small{color:var(--g);font-weight:700;font-size:12px;margin-left:auto;white-space:nowrap}
+@media(max-width:520px){.ach{grid-template-columns:1fr}.ach li{flex-wrap:wrap}.ach li small{margin-left:0;width:100%}}
 </style></head><body>
 <a class="skip" href="#main">本文へスキップ</a>
 <nav aria-label="メイン"><a class="logo" href="#top"><i aria-hidden="true"></i>KOKOA TAGUCHI OFFICIAL</a><div class="lang" aria-label="言語"><span lang="ja" aria-current="true">JP</span><a href="en/" lang="en" hreflang="en">EN</a></div>
@@ -127,7 +149,9 @@ footer .d{font-size:clamp(40px,9vw,100px);color:#1d1d1d;margin-bottom:24px}
 <section id="profile" class="rv"><span class="no" aria-hidden="true">01</span><h2 class="d">PRO<b>FILE</b></h2>
 <dl class="grid"><div><dt>NAME</dt><dd>田口 心温（たぐち ここあ）</dd></div><div><dt>CLASS</dt><dd>女子ミニマム級</dd></div><div><dt>所属</dt><dd>KODLAB</dd></div><div><dt>FROM</dt><dd>東京都江戸川区</dd></div><div><dt>HEIGHT</dt><dd>151cm</dd></div><div><dt>STYLE</dt><dd>オーソドックス</dd></div><div><dt>WEAPON</dt><dd>右オーバーハンド／左レバーブロー</dd></div><div><dt>GOAL</dt><dd>世界チャンピオン</dd></div></dl>
 <div class="bio"><div class="photo"><img src="photos/official.jpg" alt="田口心温 公式写真" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%"></div>
-<p class="lead">3歳で極真空手を始め、小学6年でボクシングへ。日本体育大学を卒業し、2026年2月にKODLABジムへ入門。KODLAB初の女子ボクサーとして4月にB級プロテストに合格。アマチュア戦績32戦24勝（10RSC）8敗、2022年全日本女子選手権ミニマム級準優勝、関東大学トーナメント優勝。憧れは内山高志、マービン・ハグラー。</p></div>
+<div class="lead2"><p>3歳で<b>極真空手</b>、中学進学前に<b>ボクシング</b>へ。<br>KODLAB初の女子ボクサーとして、世界の頂点を目指す。</p><small>憧れは内山高志、マービン・ハグラー。</small></div></div>
+<ol class="tl" aria-label="経歴"><li><span class="y">AGE 3</span><strong>極真空手を始める</strong><p>全てのタイトルを獲得。国際大会5連覇。</p></li><li><span class="y">BOXING</span><strong>中学進学前にボクシングへ転向</strong></li><li><span class="y">+2 YEARS</span><strong>U-15全日本大会 優勝</strong><p>転向からわずか2年。高校はボクシングで推薦入学。</p></li><li><span class="y">NSSU</span><strong>日本体育大学に推薦入学</strong><p>大学進学後もボクシング一筋、毎日練習を継続。</p></li><li><span class="y">1ST YEAR</span><strong>全日本大会 準優勝</strong></li><li><span class="y">3RD YEAR</span><strong>関東大学トーナメント戦 優勝／全日本大会 3位</strong></li><li><span class="y">4TH YEAR</span><strong>大学トーナメント戦でチームを決勝へ</strong><p>プロの道に進むため、早めにアマチュアを引退。</p></li><li class="pro"><span class="y">KODLAB</span><strong>内山会長のKOD LABへ</strong><p>日本体育大学ボクシング部コーチの紹介で、大学在学中に籍を置く。</p></li><li class="pro"><span class="y">APRIL</span><strong>プロテスト合格・B級ライセンス取得</strong><p>スパーリングパートナーは元世界2階級制覇王者・天海ツナミさん。</p></li></ol>
+<div class="ach" role="group" aria-label="実績"><div><h3>極真空手</h3><p class="bn"><span class="d k">5</span><em>連覇</em></p><p class="sub">国際大会</p><ul><li><i>CHAMP</i>ロシアカップ 優勝</li><li><i>DEMO</i>日韓国交50周年 演舞<small>少年部代表</small></li><li><i>DEMO</i>徳川家康400年式年大祭 演舞<small>少年部代表</small></li></ul></div><div><h3>アマチュアボクシング</h3><p class="bn"><span class="d">32</span><em>戦</em><span class="d k">24</span><em>勝（10RSC）</em><span class="d">8</span><em>敗</em></p><p class="sub">AMATEUR RECORD</p><ul><li><i>CHAMP</i>U-15全日本 王座優勝</li><li><i>2022</i>全日本選手権 準優勝</li><li><i>2024</i>全日本選手権 3位</li><li><i>CHAMP</i>関東大学トーナメント戦 優勝</li></ul></div></div>
 <h3 class="kicker" style="margin-top:56px">本人のコメント</h3><blockquote>「ワイルドワンでいきます」<cite>— 2026年7月 デビュー戦前日計量にて（スポーツ報知）</cite></blockquote>
 <blockquote>「女子版KODです」<cite>— 内山高志会長（スポーツ報知）</cite></blockquote></section>
 <div class="cut" aria-hidden="true"></div>
